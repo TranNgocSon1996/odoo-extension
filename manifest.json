@@ -3,13 +3,22 @@
     "description": "Support the odoo developer",
     "version": "0.1.0",
     "manifest_version": 2,
-    "default_locale": "en",
     "browser_action": {
         "default_icon": "images/icon.png",
-        "default_popup": "html/popup.html"
+        "default_popup": "popup.html"
     },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "scripts/content.js"
+            ]
+        }
+    ],
     "permissions": [
-        "tabs",
-        "webRequest"
+        "tabs"
     ]
 }
