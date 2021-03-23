@@ -7,18 +7,14 @@
         "default_icon": "images/icon.png",
         "default_popup": "popup.html"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-            "js": [
-                "scripts/content.js"
-            ]
-        }
-    ],
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
+    "options_page": "options.html",
     "permissions": [
-        "tabs"
+        "tabs",
+        "activeTab"
     ]
 }
